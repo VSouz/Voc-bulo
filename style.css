@@ -23,8 +23,8 @@
 
 
 .quadrado{ 
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border: 5px solid #000;
     border-color: #42d4e7 ;
     border-radius: 7px;
@@ -50,7 +50,7 @@ h1{
     border-bottom: 10px solid #42d4e7 !important;
 }
 .right{
-    background-color: #51f696;
+    background-color: #51f696 !important;
     border-color: #51f696;
 }
 .place{
@@ -58,6 +58,41 @@ h1{
     border-color: #f0611f;
 }
 .wrong{
-    background-color: #302217;
+    background-color: #302217 ;
     border-color: #302217;
+}
+.wrongTeclado{
+    color: #e4fcff;
+    background-color: #302217 ;
+    border-color: #302217;
+}
+
+#teclado {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.teclado button {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+#BACKSPACE img{
+    
+    width: 18px;
+    height: 18px;
+    padding: 0px !important;
+}
+#ENTER {
+    width: 70px;
 }

@@ -124,15 +124,27 @@ function verificar(chute){
             if (pchave[i] == chute[i]){
                 let fila = document.querySelector(`#linha${linha}`); 
                 fila.querySelector(`[data-box="${i}"]`).classList.add("right");
+
+                let teclaVirtual = document.querySelector(`#teclado`); 
+                teclaVirtual.querySelector(`#${chute[i]}`).classList.add("right");
             }else{
                 let fila = document.querySelector(`#linha${linha}`); 
                 fila.querySelector(`[data-box="${i}"]`).classList.add("place");
+
+                let teclaVirtual = document.querySelector(`#teclado`); 
+
+                if(!teclaVirtual.querySelector(`#${chute[i]}`).classList.contains("right")){
+                    teclaVirtual.querySelector(`#${chute[i]}`).classList.add("place");
+                }
             }
             
         }
         else{
             let fila = document.querySelector(`#linha${linha}`); 
                 fila.querySelector(`[data-box="${i}"]`).classList.add("wrong");
+
+                let teclaVirtual = document.querySelector(`#teclado`); 
+                teclaVirtual.querySelector(`#${chute[i]}`).classList.add("wrongTeclado");
             //         console.log('cheguei');
             // switch(tentativas){
             //     case 6:
@@ -176,9 +188,10 @@ function verificar(chute){
 
 function digitarTeclado(event) {
     
-    const keyPressed =event.key.toUpperCase();
-    
-    //console.log("Tecla pressionada:", keyPressed);
+    const keyPressed = event.key.toUpperCase();
+
+
+    console.log("Tecla pressionada:", keyPressed);
     
     
     
@@ -209,13 +222,51 @@ function digitarTeclado(event) {
     
 }
 
+function virtualTeclado(event) {
+    
+    const keyPressed = event;
+
+
+    console.log("Tecla pressionada:", keyPressed);
+    
+    
+    
+    if(keyPressed == "BACKSPACE"  ){
+        palavra.pop();
+        console.log('back', palavra);
+        mostrarTecla();
+
+    }else{
+        if(keyPressed == 'ENTER' & palavra.length < 5 ){
+            console.log("falta letra");    
+        }
+
+        if(/^[A-Z]$/.test(keyPressed) & palavra.length < 5 ){
+            palavra.push(keyPressed);
+            console.log(palavra);
+            mostrarTecla();
+        }
+
+        if(keyPressed == 'ENTER' & palavra.length == 5){
+            //console.log("cheguei aqui");
+            verificar(palavra)
+            mostrarTecla();
+        }
+        
+    }
+    
+    
+}
+
+
 function getItemAleatorio(lista) {
     let indiceAleatorio = Math.floor(Math.random() * lista.length);
     console.log("INde: " + indiceAleatorio)
     return lista[indiceAleatorio];
 }
 
-  // Adicionando um ouvinte de eventos para o evento 'keydown' (tecla pressionada)
-  document.addEventListener("keydown", digitarTeclado);
+
+ 
+document.addEventListener("keydown", digitarTeclado);
 
 
