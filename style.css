@@ -135,8 +135,9 @@ h4{
     background-color: #454c4d ;
     border-radius: 1rem;
     max-width: 300px;
+    max-height: 600px;
     width: 70%;
-    height: 60%;
+    height: 80%;
     font-family:monospace;
     font-size: 1rem;
     text-align: center;
@@ -168,5 +169,6 @@ h4{
 .infoPosition{
     display: flex;
     max-width: 100%;
+    max-height: 80%;
     justify-content: center;
 }

@@ -10,7 +10,7 @@ let lista = [
     "tenso", "pacto", "sabor", "vento", "gosto", "aceno", "fenda", 
     "casal", "dente", "carne", "pouco", "fosso", "touro", "criar", 
     "gesso", "rumor", "treta", "primo", "cervo", "vetor", "pasta", 
-    "balde", "manga", "dança", "calmo", "luzes", "perda", "lenda", 
+    "balde", "manga", "busca", "calmo", "luzes", "perda", "lenda", 
     "tecla", "balão", "polvo", "dardo", "larva", "sonar", "bloco", 
     "fosca", "trama", "porto", "fácil", "calor", "nevea", "costa", 
     "minha", "campo", "curso", "papel", "velho", "amplo"
