@@ -9,6 +9,40 @@
 </head>
 <body>
     <h1 id = "cabecalho">V O C Á B U L O</h1>
+    <div id="infoPosition" class="infoPosition">
+        <div id="info">
+            <h3> COMO JOGAR</h3>
+            <p>O objetivo é encontrar o termo correto em até 6 tentativas. <br>
+                Cada cor representa uma situação:
+                <b></b>
+                <p>
+                    <button class="quadradinho place">A</button>
+                    Significa que a letra está na palavra mas no lugar errado! 
+                </p>
+                <p>
+                    <button class="quadradinho wrong">B</button>    
+                    Significa que a letra não está na palavra! 
+                </p>
+                <p>
+                    <button class="quadradinho right">C</button>
+                    Significa que a letra está na palavra na posição certa! 
+                </p>
+                <p>
+                    Precione 
+                    <button id="ENTER">ENTER</button>
+                    para dar seu palpite!
+                </p>
+            </P>    
+            <button onclick="onInfoClick()">Entedi</button>
+                
+        </div>
+    </div>
+    <div id="resposta" class="infoPosition">
+        <div id="resultado">
+            <h3 id="tituloMsg"></h3>
+            <p id="msg"></p>
+        </div>
+    </div>
     <div id="campo">
         <div id = "linha1" class="row">
             <div id="column1" class="quadrado" data-box="0"></div>
@@ -81,7 +115,7 @@
      </div>
     <div class="teclado">
         <button id = "Z" onclick="virtualTeclado('Q')">Z</button>
-        <button id = "X" onclick="virtualTeclado('Q')">X</button>
+        <button id = "X" onclick="virtualTeclado('X')">X</button>
         <button id = "C" onclick="virtualTeclado('C')">C</button>
         <button id = "V" onclick="virtualTeclado('V')">V</button>
         <button id = "B" onclick="virtualTeclado('B')">B</button>

@@ -179,6 +179,7 @@ function verificar(chute){
             //         break;      
             // }
         }
+        msg(chute);
     }
     linha++;
     tentativas = tentativas -1;
@@ -265,8 +266,32 @@ function getItemAleatorio(lista) {
     return lista[indiceAleatorio];
 }
 
+function onInfoClick(){
+    document.getElementById("infoPosition").style.display='none';
+}
 
- 
+function msg(chute){
+    if(pchave == chute){
+        document.getElementById("resposta").style.display='flex';
+        let msgTitulo = document.getElementById("tituloMsg");
+        msgTitulo.textContent = "PARABÉNS VOCÊ ACERTOU!"
+        let msg = document.getElementById("msg");
+        msg.textContent = `A palavra é ${pchave}`
+
+        
+        
+    }
+    if(tentativas == 1 & pchave != chute){
+        document.getElementById("resposta").style.display='flex';
+        let msgTitulo = document.getElementById("tituloMsg");
+        msgTitulo.textContent = "EITA VOCÊ ERROU!"
+        let msg = document.getElementById("msg");
+        msg.textContent = `A palavra é ${pchave}`
+
+        
+    }
+}
+
 document.addEventListener("keydown", digitarTeclado);
 
 
