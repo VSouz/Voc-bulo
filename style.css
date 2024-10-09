@@ -31,7 +31,7 @@
     font-size: 3rem;
     text-align: center;
     color: #e4fcff;
-    
+    transform-origin: center;
      
   
 }
@@ -64,21 +64,29 @@ h1{
     border-bottom: 10px solid #42d4e7 !important;
 }
 .right{
+    animation-delay: 2s;
     background-color: #51f696 !important;
-    border-color: #51f696;
+    border-color: #51f696; 
+    animation: rotacionar 2s; 
 }
 .place{
+    animation-delay: 2s;
     background-color: #f0611f;
     border-color: #f0611f;
+    animation: rotacionar 2s; 
 }
 .wrong{
+    animation-delay: 2s;
     background-color: #302217 ;
     border-color: #302217;
+    
+    animation: rotacionar 2s; 
 }
 .wrongTeclado{
     color: #e4fcff;
     background-color: #302217 ;
     border-color: #302217;
+    
 }
 
 #teclado {
@@ -172,3 +180,14 @@ h4{
     max-height: 80%;
     justify-content: center;
 }
+
+@keyframes rotacionar {
+    0% {
+        transform: rotateY(0deg); /* Início */
+    }
+    100% {
+        
+        transform:rotateY(140deg);
+    }
+}
+

@@ -111,10 +111,11 @@ function mostrarTecla(){
 }
 
 
-function verificar(chute){
+async function verificar(chute){
     chute = chute.join('');
     console.log(pchave);
 
+    
 
     for (const i in chute) {
         console.log("idnex: " + i)
@@ -124,16 +125,17 @@ function verificar(chute){
             if (pchave[i] == chute[i]){
                 let fila = document.querySelector(`#linha${linha}`); 
                 fila.querySelector(`[data-box="${i}"]`).classList.add("right");
-
+                
                 let teclaVirtual = document.querySelector(`#teclado`); 
                 teclaVirtual.querySelector(`#${chute[i]}`).classList.add("right");
             }else{
                 let fila = document.querySelector(`#linha${linha}`); 
                 fila.querySelector(`[data-box="${i}"]`).classList.add("place");
-
+                
                 let teclaVirtual = document.querySelector(`#teclado`); 
-
+                
                 if(!teclaVirtual.querySelector(`#${chute[i]}`).classList.contains("right")){
+                    
                     teclaVirtual.querySelector(`#${chute[i]}`).classList.add("place");
                 }
             }
@@ -179,7 +181,8 @@ function verificar(chute){
             //         break;      
             // }
         }
-        msg(chute);
+        await sleep(250);
+        msg(chute,tentativas);
     }
     linha++;
     tentativas = tentativas -1;
@@ -270,7 +273,8 @@ function onInfoClick(){
     document.getElementById("infoPosition").style.display='none';
 }
 
-function msg(chute){
+async function msg(chute,tentativas){
+    await sleep(3000);
     if(pchave == chute){
         document.getElementById("resposta").style.display='flex';
         let msgTitulo = document.getElementById("tituloMsg");
@@ -290,6 +294,10 @@ function msg(chute){
 
         
     }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 document.addEventListener("keydown", digitarTeclado);
